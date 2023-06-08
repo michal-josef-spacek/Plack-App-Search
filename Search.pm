@@ -77,13 +77,13 @@ sub _css {
 		['d', 'transform', 'translate(-50%, -50%)'],
 		['e'],
 
-		['s', '.login'],
+		['s', '.search'],
 		['d', 'text-align', 'center'],
 		['d', 'background-color', 'blue'],
 		['d', 'padding', '1em'],
 		['e'],
 
-		['s', '.login a'],
+		['s', '.search a'],
 		['d', 'text-decoration', 'none'],
 		['d', 'color', 'white'],
 		['d', 'font-size', '3em'],
@@ -110,7 +110,7 @@ sub _tags {
 		['a', 'class', 'outer'],
 
 		['b', 'div'],
-		['a', 'class', 'login'],
+		['a', 'class', 'search'],
 		$self->image_link ? (
 			['b', 'img'],
 			['a', 'src', $self->image_link],
@@ -183,7 +183,7 @@ Default value is 'Login'.
 
 Search method.
 
-Default value is 'login'.
+Default value is 'search'.
 
 =item * C<search_title>
 

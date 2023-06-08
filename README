@@ -32,7 +32,7 @@ METHODS
 
             Search method.
 
-            Default value is 'login'.
+            Default value is 'search'.
 
     *       "search_title"
 
