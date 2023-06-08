@@ -1,10 +1,12 @@
 TODO
 ====
-2. Rewrite to use Tags::HTML::Container.
 3. Add real CSS.
 4.
 
 Applied
 =======
 1. Rewrite to Plack::Component::Tags::HTML
+OK [20230608] skim
+
+2. Rewrite to use Tags::HTML::Container.
 OK [20230608] skim

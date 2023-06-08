@@ -16,8 +16,8 @@ my $res = $test->request(HTTP::Request->new(GET => '/'));
 my $right_ret = <<"END";
 <!DOCTYPE html>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="generator" content="Plack::App::Search; Version: $Plack::App::Search::VERSION" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Search page</title><style type="text/css">
-*{box-sizing:border-box;margin:0;padding:0;}.outer{position:fixed;top:50%;left:50%;transform:translate(-50%, -50%);}.search{text-align:center;background-color:blue;padding:1em;}.search a{text-decoration:none;color:white;font-size:3em;}
-</style></head><body class="outer"><div class="search"><form method="get"><input type="text" /><button href="https://env.skim.cz">SEARCH</button></form></div></body></html>
+*{box-sizing:border-box;margin:0;padding:0;}.container{display:flex;align-items:center;justify-content:center;height:100vh;}.search{text-align:center;background-color:blue;padding:1em;}.search a{text-decoration:none;color:white;font-size:3em;}
+</style></head><body><div class="container"><div class="search"><form method="get"><input type="text" /><button href="https://env.skim.cz">SEARCH</button></form></div></div></body></html>
 END
 chomp $right_ret;
 my $ret = $res->content;
@@ -49,11 +49,11 @@ $right_ret = <<"END";
 	margin: 0;
 	padding: 0;
 }
-.outer {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
 }
 .search {
 	text-align: center;
@@ -67,14 +67,16 @@ $right_ret = <<"END";
 }
 </style>
   </head>
-  <body class="outer">
-    <div class="search">
-      <form method="get">
-        <input type="text" />
-        <button href="https://env.skim.cz">
-          SEARCH
-        </button>
-      </form>
+  <body>
+    <div class="container">
+      <div class="search">
+        <form method="get">
+          <input type="text" />
+          <button href="https://env.skim.cz">
+            SEARCH
+          </button>
+        </form>
+      </div>
     </div>
   </body>
 </html>
@@ -113,11 +115,11 @@ $right_ret = <<'END';
 	margin: 0;
 	padding: 0;
 }
-.outer {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
 }
 .search {
 	text-align: center;
@@ -131,14 +133,16 @@ $right_ret = <<'END';
 }
 </style>
   </head>
-  <body class="outer">
-    <div class="search">
-      <form method="get">
-        <input type="text" />
-        <button href="https://example.com">
-          Bar
-        </button>
-      </form>
+  <body>
+    <div class="container">
+      <div class="search">
+        <form method="get">
+          <input type="text" />
+          <button href="https://example.com">
+            Bar
+          </button>
+        </form>
+      </div>
     </div>
   </body>
 </html>

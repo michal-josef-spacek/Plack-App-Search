@@ -5,6 +5,7 @@ use strict;
 use warnings;
 
 use Plack::Util::Accessor qw(css generator image_link search_method search_title search_url tags title);
+use Tags::HTML::Container;
 
 our $VERSION = 0.01;
 
@@ -36,20 +37,20 @@ sub _prepare_app {
 		$self->search_url('https://env.skim.cz');
 	}
 
+	$self->{'_container'} = Tags::HTML::Container->new(
+		'css' => $self->css,
+		'css_inner' => 'search',
+		'tags' => $self->tags,
+	);
+
 	return;
 }
 
 sub _css {
 	my $self = shift;
 
+	$self->{'_container'}->process_css;
 	$self->css->put(
-		['s', '.outer'],
-		['d', 'position', 'fixed'],
-		['d', 'top', '50%'],
-		['d', 'left', '50%'],
-		['d', 'transform', 'translate(-50%, -50%)'],
-		['e'],
-
 		['s', '.search'],
 		['d', 'text-align', 'center'],
 		['d', 'background-color', 'blue'],
@@ -69,27 +70,26 @@ sub _css {
 sub _tags_middle {
 	my $self = shift;
 
-	$self->tags->put(
-		['a', 'class', 'outer'],
-
-		['b', 'div'],
-		['a', 'class', 'search'],
-		$self->image_link ? (
-			['b', 'img'],
-			['a', 'src', $self->image_link],
-			['e', 'img'],
-		) : (),
-		['b', 'form'],
-		['a', 'method', $self->search_method],
-		['b', 'input'],
-		['a', 'type', 'text'],
-		['e', 'input'],
-		['b', 'button'],
-		['a', 'href', $self->search_url],
-		['d', $self->search_title],
-		['e', 'button'],
-		['e', 'form'],
-		['e', 'div'],
+	$self->{'_container'}->process(
+		sub {
+			$self->tags->put(
+				$self->image_link ? (
+					['b', 'img'],
+					['a', 'src', $self->image_link],
+					['e', 'img'],
+				) : (),
+				['b', 'form'],
+				['a', 'method', $self->search_method],
+				['b', 'input'],
+				['a', 'type', 'text'],
+				['e', 'input'],
+				['b', 'button'],
+				['a', 'href', $self->search_url],
+				['d', $self->search_title],
+				['e', 'button'],
+				['e', 'form'],
+			);
+		},
 	);
 
 	return;
@@ -216,7 +216,8 @@ Returns Plack::Component object.
 =head1 DEPENDENCIES
 
 L<Plack::Component::Tags::HTML>,
-L<Plack::Util::Accessor>.
+L<Plack::Util::Accessor>,
+L<Tags::HTML::Container>.
 
 =head1 REPOSITORY
 
