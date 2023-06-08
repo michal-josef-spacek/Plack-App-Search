@@ -42,9 +42,10 @@ METHODS
 
     *       "search_title"
 
-            Search title.
+            Search title. There will be button with text in this title if is
+            defined. If not, form is without button.
 
-            Default value is 'SEARCH'.
+            Default value is undef.
 
     *       "search_url"
 

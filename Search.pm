@@ -29,10 +29,6 @@ sub _prepare_app {
 		$self->search_method('get');
 	}
 
-	if (! $self->search_title) {
-		$self->search_title('SEARCH');
-	}
-
 	if (! $self->search_url) {
 		$self->search_url('https://env.skim.cz');
 	}
@@ -85,6 +81,9 @@ sub _css {
 		['d', 'color', 'white'],
 		['d', 'border', 'none'],
 		['d', 'cursor', 'pointer'],
+		! defined $self->search_title ? (
+			['d', 'display', 'none'],
+		) : (),
 		['e'],
 
 		['s', '.search button:hover'],
@@ -115,7 +114,9 @@ sub _tags_middle {
 				['e', 'input'],
 				['b', 'button'],
 				['a', 'type', 'submit'],
-				['d', $self->search_title],
+				defined $self->search_title ? (
+					['d', $self->search_title],
+				) : (),
 				['e', 'button'],
 				['e', 'form'],
 			);
@@ -183,9 +184,10 @@ Default value is 'search'.
 
 =item * C<search_title>
 
-Search title.
+Search title. There will be button with text in this title if is defined.
+If not, form is without button.
 
-Default value is 'SEARCH'.
+Default value is undef.
 
 =item * C<search_url>
 
