@@ -18,6 +18,7 @@ MANIFEST			This list of files
 META.yml
 README
 Search.pm
+SIGNATURE
 t/Plack-App-Search/01-use.t
 t/Plack-App-Search/02-version.t
 t/Plack-App-Search/03-general.t
