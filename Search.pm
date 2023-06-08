@@ -4,7 +4,7 @@ use base qw(Plack::Component::Tags::HTML);
 use strict;
 use warnings;
 
-use Plack::Util::Accessor qw(css generator image_link search_method search_title search_url tags title);
+use Plack::Util::Accessor qw(generator image_link search_method search_title search_url title);
 use Tags::HTML::Container;
 
 our $VERSION = 0.01;
