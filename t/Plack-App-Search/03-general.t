@@ -81,8 +81,8 @@ is($ret, $right_ret, 'Get default main page in indent mode.');
 $app = Plack::App::Search->new(
 	'css' => CSS::Struct::Output::Indent->new,
 	'generator' => 'Foo',
-	'login_link' => 'https://example.com',
-	'login_title' => 'Bar',
+	'search_url' => 'https://example.com',
+	'search_title' => 'Bar',
 	'tags' => Tags::Output::Indent->new(
 		'preserved' => ['style'],
 		'xml' => 1,
@@ -124,8 +124,8 @@ $right_ret = <<'END';
     <div class="search">
       <form method="get">
         <input type="text" />
-        <button href="https://env.skim.cz">
-          SEARCH
+        <button href="https://example.com">
+          Bar
         </button>
       </form>
     </div>
