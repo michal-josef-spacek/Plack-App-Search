@@ -110,6 +110,7 @@ sub _tags_middle {
 				['a', 'method', $self->search_method],
 				['b', 'input'],
 				['a', 'type', 'text'],
+				['a', 'autofocus', 'autofocus'],
 				['e', 'input'],
 				['b', 'button'],
 				['a', 'href', $self->search_url],
