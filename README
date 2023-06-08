@@ -28,6 +28,12 @@ METHODS
 
             Default value is 'Plack::App::Search; Version: __VERSION__'
 
+    *       "image_link"
+
+            URL to image above form. Image is centered.
+
+            Default value is undef.
+
     *       "search_method"
 
             Search method.

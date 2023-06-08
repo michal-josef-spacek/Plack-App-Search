@@ -169,6 +169,12 @@ HTML generator string.
 
 Default value is 'Plack::App::Search; Version: __VERSION__'
 
+=item * C<image_link>
+
+URL to image above form. Image is centered.
+
+Default value is undef.
+
 =item * C<search_method>
 
 Search method.
