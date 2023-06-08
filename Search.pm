@@ -50,6 +50,21 @@ sub _css {
 	my $self = shift;
 
 	$self->{'_container'}->process_css;
+	if (defined $self->image_link) {
+		$self->css->put(
+			['s', '.search'],
+			['d', 'display', 'flex'],
+			['d', 'flex-direction', 'column'],
+			['d', 'align-items', 'center'],
+			['e'],
+
+			['s', '.search img'],
+			['d', 'margin-bottom', '20px'],
+			['d', 'margin-left', 'auto'],
+			['d', 'margin-right', 'auto'],
+			['e'],
+		);
+	}
 	$self->css->put(
 		['s', '.search form'],
 		['d', 'display', 'flex'],
