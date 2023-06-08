@@ -1,7 +1,6 @@
 TODO
 ====
 5. Fix doc.
-6. Improve tests.
 7. Add example to doc with image
 8. Add example to doc with button
 9.
@@ -18,4 +17,7 @@ OK [20230608] skim
 OK [20230608] skim
 
 4. Focus after loading of page.
+OK [20230608] skim
+
+6. Improve tests.
 OK [20230608] skim
