@@ -17,7 +17,7 @@ my $right_ret = <<"END";
 <!DOCTYPE html>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="generator" content="Plack::App::Search; Version: $Plack::App::Search::VERSION" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Search page</title><style type="text/css">
 *{box-sizing:border-box;margin:0;padding:0;}.container{display:flex;align-items:center;justify-content:center;height:100vh;}.search form{display:flex;align-items:center;}.search input[type="text"]{padding:10px;border-radius:4px;border:1px solid #ccc;}.search button{margin-left:10px;padding:10px 20px;border-radius:4px;background-color:#4CAF50;color:white;border:none;cursor:pointer;}.search button:hover{background-color:#45a049;}
-</style></head><body><div class="container"><div class="search"><form method="get"><input type="text" autofocus="autofocus" /><button href="https://env.skim.cz">SEARCH</button></form></div></div></body></html>
+</style></head><body><div class="container"><div class="search"><form method="get" action="https://env.skim.cz"><input type="text" autofocus="autofocus" /><button type="submit">SEARCH</button></form></div></div></body></html>
 END
 chomp $right_ret;
 my $ret = $res->content;
@@ -81,9 +81,9 @@ $right_ret = <<"END";
   <body>
     <div class="container">
       <div class="search">
-        <form method="get">
+        <form method="get" action="https://env.skim.cz">
           <input type="text" autofocus="autofocus" />
-          <button href="https://env.skim.cz">
+          <button type="submit">
             SEARCH
           </button>
         </form>
@@ -158,9 +158,9 @@ $right_ret = <<'END';
   <body>
     <div class="container">
       <div class="search">
-        <form method="get">
+        <form method="get" action="https://example.com">
           <input type="text" autofocus="autofocus" />
-          <button href="https://example.com">
+          <button type="submit">
             Bar
           </button>
         </form>
@@ -247,9 +247,9 @@ $right_ret = <<'END';
     <div class="container">
       <div class="search">
         <img src="logo.jpg" />
-        <form method="get">
+        <form method="get" action="https://example.com">
           <input type="text" autofocus="autofocus" />
-          <button href="https://example.com">
+          <button type="submit">
             Bar
           </button>
         </form>
