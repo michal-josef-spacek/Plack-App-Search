@@ -98,9 +98,7 @@ EXAMPLE
      # TODO
 
 DEPENDENCIES
-    CSS::Struct::Output::Raw, Plack::Util::Accessor,
-    Tags::HTML::Page::Begin, Tags::HTML::Page::End, Tags::Output::Raw,
-    Unicode::UTF8.
+    Plack::Component::Tags::HTML, Plack::Util::Accessor.
 
 REPOSITORY
     <https://github.com/michal-josef-spacek/Plack-App-Search>

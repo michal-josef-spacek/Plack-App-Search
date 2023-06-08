@@ -1,48 +1,17 @@
 package Plack::App::Search;
 
-use base qw(Plack::Component);
+use base qw(Plack::Component::Tags::HTML);
 use strict;
 use warnings;
 
-use CSS::Struct::Output::Raw;
 use Plack::Util::Accessor qw(css generator image_link search_method search_title search_url tags title);
-use Tags::HTML::Page::Begin;
-use Tags::HTML::Page::End;
-use Tags::Output::Raw;
-use Unicode::UTF8 qw(decode_utf8 encode_utf8);
 
 our $VERSION = 0.01;
 
-sub call {
-	my ($self, $env) = @_;
-
-	$self->_tags;
-	$self->tags->finalize;
-	my $content = encode_utf8($self->tags->flush(1));
-
-	return [
-		200,
-		[
-			'content-type' => 'text/html; charset=utf-8',
-		],
-		[$content],
-	];
-}
-
-sub prepare_app {
+sub _prepare_app {
 	my $self = shift;
 
-	if (! $self->css || ! $self->css->isa('CSS::Struct::Output')) {
-		$self->css(CSS::Struct::Output::Raw->new);
-	}
-
-	if (! $self->tags || ! $self->tags->isa('Tags::Output')) {
-		$self->tags(Tags::Output::Raw->new(
-#			'no_simple' => ['img'],
-			'xml' => 1,
-		));
-	}
-
+	# Defaults which rewrite defaults in module which I am inheriting.
 	if (! $self->generator) {
 		$self->generator(__PACKAGE__.'; Version: '.$VERSION);
 	}
@@ -51,6 +20,10 @@ sub prepare_app {
 		$self->title('Search page');
 	}
 
+	# Inherite defaults.
+	$self->SUPER::_prepare_app;
+
+	# Defaults from this module.
 	if (! $self->search_method) {
 		$self->search_method('get');
 	}
@@ -93,19 +66,9 @@ sub _css {
 	return;
 }
 
-sub _tags {
+sub _tags_middle {
 	my $self = shift;
 
-	$self->_css;
-
-	Tags::HTML::Page::Begin->new(
-		'css' => $self->css,
-		'generator' => $self->generator,
-		'lang' => {
-			'title' => $self->title,
-		},
-		'tags' => $self->tags,
-	)->process;
 	$self->tags->put(
 		['a', 'class', 'outer'],
 
@@ -128,9 +91,6 @@ sub _tags {
 		['e', 'form'],
 		['e', 'div'],
 	);
-	Tags::HTML::Page::End->new(
-		'tags' => $self->tags,
-	)->process;
 
 	return;
 }
@@ -255,12 +215,8 @@ Returns Plack::Component object.
 
 =head1 DEPENDENCIES
 
-L<CSS::Struct::Output::Raw>,
-L<Plack::Util::Accessor>,
-L<Tags::HTML::Page::Begin>,
-L<Tags::HTML::Page::End>,
-L<Tags::Output::Raw>,
-L<Unicode::UTF8>.
+L<Plack::Component::Tags::HTML>,
+L<Plack::Util::Accessor>.
 
 =head1 REPOSITORY
 

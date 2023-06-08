@@ -26,12 +26,8 @@ no_index:
     - t
     - xt
 requires:
-  CSS::Struct::Output::Raw: 0
+  Plack::Component::Tags::HTML: 0
   Plack::Util::Accessor: 0
-  Tags::HTML::Page::Begin: 0.1
-  Tags::HTML::Page::End: 0.04
-  Tags::Output::Raw: 0
-  Unicode::UTF8: 0
   perl: 5.8.0
 resources:
   bugtracker: https://github.com/michal-josef-spacek/Plack-App-Search/issues
