@@ -2,7 +2,8 @@ TODO
 ====
 1. Rewrite to Plack::Component::Tags::HTML
 2. Rewrite to use Tags::HTML::Container.
-3.
+3. Add real CSS.
+4.
 
 Applied
 =======
