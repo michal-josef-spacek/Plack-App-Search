@@ -7,7 +7,7 @@ use warnings;
 use Plack::Util::Accessor qw(generator image_link search_method search_title search_url title);
 use Tags::HTML::Container;
 
-our $VERSION = 0.01;
+our $VERSION = 0.02;
 
 sub _prepare_app {
 	my $self = shift;
@@ -333,6 +333,6 @@ BSD 2-Clause License
 
 =head1 VERSION
 
-0.01
+0.02
 
 =cut
