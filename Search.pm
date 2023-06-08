@@ -177,7 +177,7 @@ Default value is CSS::Struct::Output::Raw instance.
 
 HTML generator string.
 
-Default value is 'Login'.
+Default value is 'Plack::App::Search; Version: __VERSION__'
 
 =item * C<search_method>
 
@@ -215,7 +215,7 @@ Default value is 'Login page'.
 
  my $psgi_ar = $obj->call($env);
 
-Implementation of login page.
+Implementation of search page.
 
 Returns reference to array (PSGI structure).
 
