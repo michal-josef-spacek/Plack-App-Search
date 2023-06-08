@@ -51,16 +51,29 @@ sub _css {
 
 	$self->{'_container'}->process_css;
 	$self->css->put(
-		['s', '.search'],
-		['d', 'text-align', 'center'],
-		['d', 'background-color', 'blue'],
-		['d', 'padding', '1em'],
+		['s', '.search form'],
+		['d', 'display', 'flex'],
+		['d', 'align-items', 'center'],
 		['e'],
 
-		['s', '.search a'],
-		['d', 'text-decoration', 'none'],
+		['s', '.search input[type="text"]'],
+		['d', 'padding', '10px'],
+		['d', 'border-radius', '4px'],
+		['d', 'border', '1px solid #ccc'],
+		['e'],
+
+		['s', '.search button'],
+		['d', 'margin-left', '10px'],
+		['d', 'padding', '10px 20px'],
+		['d', 'border-radius', '4px'],
+		['d', 'background-color', '#4CAF50'],
 		['d', 'color', 'white'],
-		['d', 'font-size', '3em'],
+		['d', 'border', 'none'],
+		['d', 'cursor', 'pointer'],
+		['e'],
+
+		['s', '.search button:hover'],
+		['d', 'background-color', '#45a049'],
 		['e'],
 	);
 
