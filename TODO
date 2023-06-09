@@ -2,7 +2,6 @@ TODO
 ====
 5. Fix doc.
 7. Add example to doc with image
-8. Add example to doc with button
 9. Parameter for zoom?
 10.
 
@@ -22,3 +21,6 @@ OK [20230608] skim
 
 6. Improve tests.
 OK [20230608] skim
+
+8. Add example to doc with button
+OK [20230609] skim

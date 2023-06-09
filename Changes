@@ -1,5 +1,6 @@
 0.02
  - Add another test for post method.
+ - Add example to doc with button.
  - Fix minimal version of Plack::Component::Tags::HTML.
  - Regen META.yml.
 
