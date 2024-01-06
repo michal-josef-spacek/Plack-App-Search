@@ -4,7 +4,8 @@ use base qw(Plack::Component::Tags::HTML);
 use strict;
 use warnings;
 
-use Plack::Util::Accessor qw(generator image_link search_method search_title search_url title);
+use Plack::Util::Accessor qw(generator image_height image_link search_method
+	search_title search_url title);
 use Tags::HTML::Container;
 
 our $VERSION = 0.03;
@@ -58,6 +59,9 @@ sub _css {
 			['d', 'margin-bottom', '20px'],
 			['d', 'margin-left', 'auto'],
 			['d', 'margin-right', 'auto'],
+			defined $self->image_height ? (
+				['d', 'height', $self->image_height],
+			) : (),
 			['e'],
 		);
 	}
