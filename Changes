@@ -1,5 +1,6 @@
 0.03
  - Add image_height() accessor.
+ - Improve doc.
  - Regen README file.
  - Update copyright years.
 

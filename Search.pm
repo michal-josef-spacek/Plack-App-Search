@@ -158,8 +158,6 @@ Plack::App::Search - Plack search application.
 
 Constructor.
 
-Returns instance of object.
-
 =over 8
 
 =item * C<css>
@@ -212,6 +210,8 @@ Page title.
 Default value is 'Login page'.
 
 =back
+
+Returns instance of object.
 
 =head2 C<call>
 

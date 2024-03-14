@@ -14,8 +14,6 @@ METHODS
 
     Constructor.
 
-    Returns instance of object.
-
     *       "css"
 
             Instance of CSS::Struct::Output object.
@@ -64,6 +62,8 @@ METHODS
             Page title.
 
             Default value is 'Login page'.
+
+    Returns instance of object.
 
   "call"
      my $psgi_ar = $obj->call($env);
