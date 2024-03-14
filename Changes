@@ -1,4 +1,4 @@
-0.03
+0.03 2024-03-14T18:57:42+01:00
  - Add 'search_placeholder' parameter.
  - Add image_height() accessor.
  - Improve doc.
