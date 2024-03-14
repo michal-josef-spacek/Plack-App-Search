@@ -38,6 +38,14 @@ METHODS
 
             Default value is 'search'.
 
+    *       "search_placeholder"
+
+            Search placeholder text.
+
+            It's optional.
+
+            Default value is undef.
+
     *       "search_title"
 
             Search title. There will be button with text in this title if is

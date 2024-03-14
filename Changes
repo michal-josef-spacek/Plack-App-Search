@@ -1,4 +1,5 @@
 0.03
+ - Add 'search_placeholder' parameter.
  - Add image_height() accessor.
  - Improve doc.
  - Regen README file.

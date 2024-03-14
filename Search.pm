@@ -5,7 +5,7 @@ use strict;
 use warnings;
 
 use Plack::Util::Accessor qw(generator image_height image_link search_method
-	search_title search_url title);
+	search_placeholder search_title search_url title);
 use Tags::HTML::Container;
 
 our $VERSION = 0.03;
@@ -115,6 +115,9 @@ sub _tags_middle {
 				['b', 'input'],
 				['a', 'type', 'text'],
 				['a', 'autofocus', 'autofocus'],
+				defined $self->search_placeholder ? (
+					['a', 'placeholder', $self->search_placeholder],
+				) : (),
 				['e', 'input'],
 				['b', 'button'],
 				['a', 'type', 'submit'],
@@ -183,6 +186,14 @@ Default value is undef.
 Search method.
 
 Default value is 'search'.
+
+=item * C<search_placeholder>
+
+Search placeholder text.
+
+It's optional.
+
+Default value is undef.
 
 =item * C<search_title>
 
