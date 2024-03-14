@@ -178,6 +178,12 @@ HTML generator string.
 
 Default value is 'Plack::App::Search; Version: __VERSION__'
 
+=item * C<image_height>
+
+Image height.
+
+Default value is undef, this mean real height of image.
+
 =item * C<image_link>
 
 URL to image above form. Image is centered.

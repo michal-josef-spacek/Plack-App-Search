@@ -26,6 +26,12 @@ METHODS
 
             Default value is 'Plack::App::Search; Version: __VERSION__'
 
+    *       "image_height"
+
+            Image height.
+
+            Default value is undef, this mean real height of image.
+
     *       "image_link"
 
             URL to image above form. Image is centered.
