@@ -8,7 +8,7 @@ use Plack::Util::Accessor qw(generator image_height image_link image_radius
 	search_method search_placeholder search_title search_url title);
 use Tags::HTML::Container;
 
-our $VERSION = 0.04;
+our $VERSION = 0.05;
 
 sub _prepare_app {
 	my $self = shift;
@@ -450,6 +450,6 @@ BSD 2-Clause License
 
 =head1 VERSION
 
-0.04
+0.05
 
 =cut
