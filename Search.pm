@@ -121,6 +121,7 @@ sub _tags_middle {
 				defined $self->search_placeholder ? (
 					['a', 'placeholder', $self->search_placeholder],
 				) : (),
+				['a', 'name', 'search'],
 				['e', 'input'],
 				['b', 'button'],
 				['a', 'type', 'submit'],

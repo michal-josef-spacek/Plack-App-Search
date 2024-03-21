@@ -1,6 +1,7 @@
 0.04
  - Add missing 'image_height' parameter description in doc.
  - Add 'image_radius' parameter.
+ - Add 'name' attribute to search field.
 
 0.03 2024-03-14T18:57:42+01:00
  - Add 'search_placeholder' parameter.
